@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gzebis Statusi</title>
+</head>
+<body>
+<h1>Gzebis Statusebi Sakartveloshi</h1>
+<table>
+	<tr>
+			<th>ID</th>
+		    <th>Gzis Dasaxeleba</th>
+		    <th>Statusi</th>
+		    <th>Bolo Ganaxleba</th>
+		    <th>Informaciis ganaxlebis motxovna</th>
+	</tr>
+	<tr>
+			<td>1</td>
+		    <td>Kobi Gudauris magistrali</td>
+		    <td>Gia</td>
+		    <td>20/03/2021 15:36</td>
+		    <td><button onclick="myFunction('1')">Motxovna</button></td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+
+	function myFunction(roadId) {
+		var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4) {
+		      alert(this.responseText);
+		     }
+		  };
+		  xhttp.open("POST", "/update", true);
+		  xhttp.send(JSON.stringify({
+		  	'roadId': roadId
+		  }));
+	}
+</script>
+</body>
+</html>
