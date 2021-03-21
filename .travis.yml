@@ -9,8 +9,6 @@ branches:
 
 before_script:
   - gem install dpl
-  - npm install
-  - npm run build
 
 script:
   - dpl --skip-cleanup --provider=heroku --app=georgia-road-condition --api-key=$HEROKU_API_KEY
